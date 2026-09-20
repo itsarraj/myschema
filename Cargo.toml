@@ -1,0 +1,25 @@
+[package]
+name = "myschema"
+version = "0.1.0"
+edition = "2021"
+description = "Diffs two live MySQL schemas and generates reconciling SQL — a pgdiff/migra (Python) equivalent for MySQL instead of Postgres"
+license = "MIT"
+authors = ["Animesh Raj <animesh080808@gmail.com>"]
+repository = "https://github.com/itsarraj/myschema"
+readme = "README.md"
+keywords = ["mysql", "schema", "diff", "migration", "cli"]
+categories = ["command-line-utilities"]
+
+[lib]
+name = "myschema"
+path = "src/lib.rs"
+
+[[bin]]
+name = "myschema"
+path = "src/main.rs"
+
+[dependencies]
+sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio", "tls-rustls", "mysql"] }
+tokio = { version = "1", features = ["full"] }
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
