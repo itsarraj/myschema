@@ -5,6 +5,12 @@ MySQL equivalent of this workspace's own `pgdiff` (which does the same
 for Postgres), and a `migra` (Python) equivalent for people who don't
 want a Python install just to compare two schemas.
 
+## Installation
+
+```sh
+cargo install --path .
+```
+
 ## Usage
 
 ```bash
